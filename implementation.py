@@ -142,7 +142,8 @@ def better_evaluate(board):
         return 1100 - board.num_tokens_on_board()
     elif board.is_win() == other_player:
         return -1100 + board.num_tokens_on_board()
-
+    elif board.is_tie():
+        return 0
     score = 0
 
     for chain in board.chain_cells(other_player):
